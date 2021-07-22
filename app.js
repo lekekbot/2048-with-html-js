@@ -19,15 +19,12 @@ function start() {
             elem.appendChild(textnode)
             senddata.appendChild(elem)
         }
-
     }
 }
 
 function displaynums() {
-    console.log(data);
     createrand2nums(data)
     createrand2nums(data)
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
         var senddata = document.getElementsByClassName('row')[i];
         removeAllChildNodes(senddata)
@@ -60,9 +57,7 @@ function createrand2nums() {
                 }
                 ++loc
             }
-            if (yes) {
-                return data[i][loc] = Math.random() > 0.75 ? 4 : 2
-            }
+            if (yes) return data[i][loc] = Math.random() > 0.75 ? 4 : 2
         }
     }
 }
@@ -200,8 +195,6 @@ function checkKey(e) {
 }
 
 function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+    while (parent.firstChild) parent.removeChild(parent.firstChild);
     return parent
 }
